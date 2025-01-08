@@ -1,0 +1,18 @@
+const express = require('express');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const app = express();
+
+const start = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        app.listen(3000, () => {
+        console.log(`Server is listening on port: ${process.env.PORT}`);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+start()
