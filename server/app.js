@@ -1,8 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const router = require('./routes/router');
 
 const app = express();
+
+app.use(express.json());
+app.use(router);
 
 const start = async () => {
     try {
