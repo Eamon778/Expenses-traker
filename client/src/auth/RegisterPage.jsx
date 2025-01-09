@@ -51,7 +51,7 @@ function RegisterPage() {
 
     return (
         <div className="bg-[#051321] h-screen flex justify-center items-center">
-            <div className="border border-2 bg-[#040f1a] w-[440px] border-slate-800 rounded-lg p-10">
+            <div className="border-2 bg-[#040f1a] w-[440px] border-slate-800 rounded-lg p-10">
                 <h1 className="text-white text-5xl font-bold">Sign up</h1>
                 <form onSubmit={handleSubmit} className="text-white">
                     {error && <p className="text-red-500 text-center mt-3 mb-4">{error}</p>}

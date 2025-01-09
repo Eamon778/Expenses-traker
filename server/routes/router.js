@@ -9,6 +9,7 @@ router.route('/auth/login').post(loginUser)
 router.route('/auth/register').post(createUser)
 
 //routes for all the expenses
-router.route('/expenses/').get(getExpenses).post(addExpenses).put(updateExpenses).delete(deleteExpenses)
+router.route('/users/:id/expenses').get(getExpenses).post(addExpenses)
+router.route('/users/:id/expenses/:expenseId').put(updateExpenses).delete(deleteExpenses)
 
 module.exports = router;
