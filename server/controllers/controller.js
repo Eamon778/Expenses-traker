@@ -33,7 +33,7 @@ const getExpenses = async (req, res) => {
             return res.status(404).json({success: false, message: 'User not found'})
         }
         
-        res.status(200).json({success: true, data: user.expenses})
+        res.status(200).json({success: true, expenses: user.expenses})
     } catch (err){
         console.log(err)
         res.status(500).json({success: false, message: 'Internal server error'})

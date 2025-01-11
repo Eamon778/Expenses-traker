@@ -19,7 +19,7 @@ const createUser = async (req, res) => {
         const newUser = new User({name, email, password: bcrPass})
         await newUser.save()
 
-        const {password: _, ...safeUser} = newUser.toObject()
+        const {password: _, expenses: __, ...safeUser} = newUser.toObject()
         res.status(200).json({success: true, message: 'User Registred successfully', data: safeUser})
     } catch (err) {
         res.status(500).json({success: false, message: 'Internal Server Error'})
@@ -42,7 +42,7 @@ const loginUser = async (req, res) =>{
             return res.status(400).json({success: false, message: 'Invalid password'})
         }
 
-        const {password: _, ...safeUser} = user.toObject()
+        const {password: _, expenses: __, ...safeUser} = user.toObject()
         res.status(200).json({success: true, message: 'Login successfully', data: safeUser})
     } catch (err){
         res.status(500).josn({success: false, message: 'Interval Server Error'})

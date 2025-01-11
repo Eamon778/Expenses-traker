@@ -22,6 +22,7 @@ function Model({onClose}) {
                 setDescription('');
                 setAmount('');
                 setDate('');
+                onClose()
             } else {
                 alert('Failed to add expense: ' + response.data.message);
             }
